@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>adfa</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 200px;
+			margin: 20px auto;
+			border-top: 1px solid #333;
+			border-bottom: 1px solid #333;
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+			height: 100%;
+		}
+		.clearfix::before,.clearfix::after{
+			content: "";
+			width: 0;
+			clear: both;
+		}
+		li{
+			list-style: none;
+			width: 0px;
+			height: 100%;	
+			border-left-width: 20px;
+			border-left-style: solid;
+			float: left;
+		}
+		li a{
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+		}/* 
+		li.current a{
+			width: 360px;
+		} */
+		li:nth-of-type(1){border-left-color: red;width:360px;}
+		li:nth-of-type(2){border-left-color: orange;}
+		li:nth-of-type(3){border-left-color: yellow;}
+		li:nth-of-type(4){border-left-color: green;}
+		li:nth-of-type(5){border-left-color: cyan;}
+		li:nth-of-type(6){border-left-color: blue;}
+		li:nth-of-type(7){border-left-color: violet;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="clearfix">
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+			<li><a href="javascript:"></a></li>
+		</ul>
+	</div>
+	<script>
+		(function(){
+			var slider = function(){
+				function Slider(){
+
+				}
+				Slider.prototype = function(){
+
+				};
+
+				return {
+					init : function(){
+						this.slide = new Slider();
+					}
+				}
+			}
+
+
+
+
+
+			function getStyle(elem,attr){
+				return elem.currentStyle? elem.currentStyle[attr]:getComputedStyle(elem,0)[attr];
+			}
+		})();
+	</script>
+</body>
+</html>
