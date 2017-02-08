@@ -955,7 +955,10 @@ dd .min_price input[type='text'],dd .max_price input[type='text']{
 	color: #fff;
 	font-weight: bold;
 }
+
 .images_slide{
+	height:122px;
+	overflow:hidden;
 	position: absolute;
 	bottom: 0;
 	left: 0;
