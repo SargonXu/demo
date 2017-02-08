@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<meta charset="utf-8" />
+<title> </title>
+<style>
+ul,li,ol{list-style:none;padding:0;margin:0;}
+#bar{background:url(img/JS8/bg.jpg) repeat-x;width:520px;height:36px;line-height:36px; }
+#bar li{float:left;padding-left:20px;}
+#bar li:hover {cursor:pointer;}
+.content{background:url(img/JS8/bg1.jpg) repeat-x;height:27px;line-height:27px; position:absolute;top:55px;}
+.width1{width:290px;left:20px;display:none;}
+.width2{width:320px;left:75px;display:none;}
+.width3{width:260px;left:165px;display:none;}
+.width4{width:375px;left:217px;display:none;}
+.content li {float:left;font-size:14px;border-right:1px solid #000;height:18px;line-height:18px;padding-left:10px;padding-right:10px;margin-top:4px;}
+a{}
+</style>
+<script >
+/*
+思路：
+1、布局：导航栏，用标签ol，区分后面的ul
+2、aLi 简历索引，控制对应的aUl
+
+*/
+
+
+window.onload=function(){
+        var oBar=document.getElementById('bar');
+        var aLi=oBar.getElementsByTagName('li');
+        var aUl=document.getElementsByTagName('ul');
+        var timer1=null;
+        var timer2=null;
+
+        for (var i=0;i<aLi.length ;i++ )  //aLi 跟 aUl的数组长度刚好一样，可以写在同一个for循环
+        {
+                aLi[i].index=i;
+                aUl[i].index=i;
+                aLi[i].onmouseover=function(){
+                        for (var i=0;i<aUl.length ;i++ )  //这个for循环，在移动到各aLi时,先把所有的aUl全部隐藏。（bug问题：平行移动aLi，子菜单不会自动隐藏）
+                        {
+                                aUl[i].style.display='none';
+                        }
+                        that=this.index;
+                        show();
+                
+                }
+                aLi[i].onmouseout=function(){
+                        that=this.index;
+                        hide();
+                
+                }
+                
+                aUl[i].onmouseover=function(){
+                        that=this.index;
+                        show();
+                }
+                aUl[i].onmouseout=function(){
+                        that=this.index;
+                        hide();
+                }
+
+        }
+
+
+        function show(){
+                clearTimeout(timer2);
+
+                timer1=setTimeout(function(){aUl[that].style.display='block';},500);
+        
+        }
+        function hide(){
+                timer2=setTimeout(function(){aUl[that].style.display='none';},500);
+        
+        }
+}
+</script>
+</head>
+
+ <BODY>
+  <ol id="bar">
+        <li>首页</li>
+        <li>关于我们</li>
+        <li>作品</li>
+        <li>博客</li>
+  </ol>
+  <ul class="content width1">
+        <li><a href="#">最近更新</a></li>
+        <li><a href="#">活动</a></li>
+        <li><a href="#">报名试听</a></li>
+        <li><a href="#">学员反馈</a></li>
+  </ul>
+  <ul  class="content width2">
+        <li><a href="#">妙味讲师</a></li>
+        <li><a href="#">培训方式</a></li>
+        <li><a href="#">培训理念</a></li>
+        <li><a href="#">联系我们</a></li>
+  </ul>
+  <ul  class="content width3">
+        <li><a href="#">般固</a></li>
+        <li><a href="#">MATRIX</a></li>
+        <li><a href="#">留学e网</a></li>
+        <li><a href="#">ECMall</a></li>
+  </ul>
+  <ul  class="content width4">
+        <li><a href="#">JS教程</a></li>
+        <li><a href="#">弹出层效果</a></li>
+        <li><a href="#">3D球面标签云</a></li>
+        <li><a href="#">Window计算器</a></li>
+  </ul>
+ </BODY>
+</HTML>
+

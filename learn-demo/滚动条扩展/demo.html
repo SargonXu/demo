@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset='utf-8'"/>
+    <title>滚动条扩展</title>
+    <style>
+    	#wrap{
+    		width: 20px;height: 400px;background: #aaa;position: relative;float: left;border: 1px solid #000;border-right: none;
+    	}
+    	#div1{
+    		width: 20px;background: #0f0;position: absolute;top: 0;left: 0;height: 40px;
+    	}
+    	#box{
+    		 width: 300px;height: 400px;border: 1px solid #000;float: left;overflow: hidden;position: relative;
+    	}
+    	#div2{
+    		width: 300px;position: absolute;top: 0;left: 0;
+    	}
+    </style> 
+    <script>
+    	window.onload=function(){
+    		var oWrap=document.getElementById("wrap");
+    		var oBox=document.getElementById("box");
+    		var oDiv1=document.getElementById("div1");
+    		var oDiv2=document.getElementById("div2");
+    		if(oDiv2.scrollHeight==oBox.clientHeight){
+    			oDiv1.style.height=oWrap.clientHeight+"px";
+    		}else{
+    			var H1=oWrap.clientHeight;
+    			oDiv1.style.height=H1*(oBox.clientHeight/oDiv2.scrollHeight)+"px";
+    		}
+    		oDiv1.onmousedown=function(ev){
+    			var ev=ev||event;
+    			var Y=ev.clientY;
+    			var disT=Y-oWrap.offsetTop-1;
+    			var disB=oDiv1.offsetHeight-disT;
+    			if(oDiv1.setCapture){
+    				oDiv1.setCapture();
+    			}
+    			document.onmousemove=function(ev){
+    				var ev=ev||event;
+    				var iY=ev.clientY;
+    				if(iY>oWrap.offsetTop+oWrap.offsetHeight-disB-1){
+    					iY=oWrap.offsetTop+oWrap.offsetHeight-disB-1;
+    				}
+    				if(iY<oWrap.offsetTop+disT+1){
+    					iY=oWrap.offsetTop+disT+1;
+    				}
+    				var disY=iY-Y;
+    				oDiv1.style.top=disY+"px";
+    				oDiv2.style.top=-disY/H1*oDiv2.scrollHeight+"px";
+    			};
+    			document.onmouseup=function(){
+    				document.onmousemove=document.onmouseup=null;
+    				if(oDiv1.releaseCapture){
+    					oDiv1.releaseCapture();
+    				}
+    			};
+    			return false;
+    		};
+    	};
+    </script> 
+</head>
+<body>
+	<div id="wrap">
+		<div id="div1"></div>
+	</div>
+	<div id="box">
+		<div id="div2">
+		    adadafadf0000<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+	        adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+	        adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+	        adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+	        adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>
+		    adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf<br/>adadafadf1111<br/>
+		</div>
+	</div>
+</body>
+</html>

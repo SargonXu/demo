@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset='utf-8'"/>
+    <title>多选</title>
+    <style>
+    	body,ul{
+    		margin: 0;padding: 0;
+    	}
+    	input{
+    		width: 200px;
+    	}
+    	ul{
+    		display: none;width: 100px;
+    	}
+    	ul li{
+    		list-style: none;/* width: 100px; */height: 30px;line-height: 30px;margin-top: 2px;background: #f1f1f1;
+    	}
+    	ul li.selected{
+    		background: #ff0;color: #fff;
+    	}
+    </style>
+    <script>
+    	window.onload=function(){
+    		var oInp=document.getElementsByTagName("input")[0];
+    		var oUl=document.getElementsByTagName("ul")[0];
+    		var aLi=oUl.getElementsByTagName("li");
+    		oInp.onOff=true;
+            
+    		oInp.onclick=function(){
+    			for(var i=0;i<aLi.length;i++){
+    				aLi[i].onOff=true;
+    				aLi[i].className="";
+    			}
+    			if(oInp.onOff==true){
+    				oUl.style.display="block";
+    				oInp.onOff=false;
+    			}else{
+    				oUl.style.display="none";
+    				oInp.onOff=true;
+    			}
+    			
+    			for(var i=0;i<aLi.length;i++){
+    				aLi[i].onclick=function(ev){
+    					var ev=ev||event;
+    					if(ev.ctrlKey){
+    						// if(this.onOff){
+    						// 	this.onOff=false;
+    							this.className="selected";
+    							if(oInp.value==""){
+    								oInp.value=this.innerHTML;
+    							}else{ 
+    								if(oInp.value.indexOf(this.innerHTML)==-1){
+    									oInp.value+="，"+this.innerHTML;
+    							    }else{
+    							    	this.className="";
+    							    	if(oInp.value==this.value){
+    							    		oInp.value="";
+    							    	}else{
+    							    		if(oInp.value.indexOf(this.innerHTML)==0){
+    							    		oInp.value=oInp.value.split(this.innerHTML+"，").join("");
+	    							    	}else{
+	    							    		oInp.value=oInp.value.split("，"+this.innerHTML).join("");
+	    							    	}
+    							    	/*if(oInp.value.indexOf("，")==0){
+    							    		oInp.value=oInp.value.split("，").join("，");
+    							    	}*/
+    							    	
+    							        }
+    							    }
+    							}
+    						/*}else{
+    							this.onOff=true;
+    							this.className="";
+    							if(oInp.value==this.innerHTML){
+    								oInp.value="";
+    							}else{
+    								oInp.value=oInp.value.split(","+this.innerHTML).join("");
+    							}
+    						}*/
+    						
+    					}else{
+    						for(var i=0;i<aLi.length;i++){
+    							aLi[i].className="";
+    						}
+    						this.className="selected";
+    						oInp.value=this.innerHTML;
+    					}
+    				}
+    			}
+    		};
+    	};
+    </script> 
+</head>
+<body>
+    <input type="text" />
+    <ul>
+    	<li>华文新魏</li>
+    	<li>微软雅黑</li>
+    	<li>楷体</li>
+    	<li>宋体</li>
+    	<li>黑体</li>
+    </ul>
+</body>
+</html>

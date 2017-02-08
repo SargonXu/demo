@@ -1,0 +1,17 @@
+ul{
+	position: relative;
+	padding: 10px;
+}
+li{
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	list-style: none;
+	border: 1px solid #000;
+	width: 40px;
+	line-height:40px;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+}

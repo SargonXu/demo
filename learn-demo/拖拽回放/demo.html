@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset='utf-8'"/>
+    <title>拖拽回放</title>
+    <style>
+    	div{
+    		width: 100px;height: 100px;position: absolute;background: #f00;
+    	}
+    </style>
+    <script>
+    	window.onload=function(){
+    		var oInp=document.getElementsByTagName("input")[0];
+    		var oDiv=document.getElementsByTagName("div")[0];
+    		var arrPos=[];
+    		var L=oDiv.offsetLeft;
+    		var T=oDiv.offsetTop;
+    		var Joson={
+    			"left":L,"top":T
+    		};
+    		arrPos.unshift(Joson);
+
+    		oDiv.onmousedown=function(ev){
+    			var ev=ev||event;
+    			var disX=ev.clientX-this.offsetLeft;
+    			var disY=ev.clientY-this.offsetTop;
+
+                if(oDiv.setCapture){
+                	oDiv.setCaputre();
+                }
+    			document.onmousemove=function(ev){
+    				var ev=ev||event;
+    				var L=ev.clientX-disX;
+    				var T=ev.clientY-disY;
+    				var iScreenW=document.documentElement.clientWidth;
+    				var iScreenH=document.documentElement.clientHeight;
+    				if(L<0){
+    					L=0;
+    				}else if(L>iScreenW-oDiv.offsetWidth){
+    					L=iScreenW-oDiv.offsetWidth;
+    				}
+    				if(T<0){
+    					T=0;
+    				}else if(T>iScreenH-oDiv.offsetHeight){
+    					T=iScreenH-oDiv.offsetHeight+document.body.scrollTop;
+    				}
+    				Joson={
+    					"left":L,"top":T
+    				};
+    				arrPos.unshift(Joson);
+    				oDiv.style.top=T+"px";
+    				oDiv.style.left=L+"px";
+    			};
+    			document.onmouseup=function(){
+    				document.onmousemove=document.onmouseup=null;
+    				if(oDiv.releaseCapture){
+    					oDiv.releaseCapture();
+    				}
+    			};
+    			return false;
+    		};
+    		oInp.onclick=function(){
+    			var num=0;
+    			/*alert(1);*/
+    			oInp.timer=setInterval(function(){
+    				oDiv.style.top=arrPos[num].top+"px";
+    				oDiv.style.left=arrPos[num].left+"px";
+    				num++;
+    				if(num==arrPos.length){
+    					clearInterval(oInp.timer);
+    					arrPos=[];
+    					return false;
+    				}
+    			},50);
+    		};
+    	}
+    </script> 
+</head>
+<body>
+    <input type="button" value="回放"/>
+    <div></div>
+</body>
+</html>

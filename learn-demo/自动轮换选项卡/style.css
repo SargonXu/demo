@@ -1,0 +1,28 @@
+*{
+	margin: 0px;padding: 0px;
+}
+body{
+	background: #f1f1f1;
+}
+li{
+	list-style: none;cursor: pointer;
+}
+#wrap{
+	margin: 20px auto 0;width: 320px;height: 130px;border: 1px solid #000;background: #fff;padding: 10px;
+	position: relative;
+}
+#choice{
+    margin-bottom: 5px;height: 30px;
+}
+#choice li{
+	float: left;width: 80px;height: 30px;line-height: 30px;text-align: center;background: #9de7ea;margin-left: 2px;
+}
+img{
+	width: 200px;height: 90px;border: none;
+}
+#list{
+	display: inline-block;position: absolute;top: 45px;left: 210px;
+}
+#list li{
+	width: 100px;height: 29px;line-height: 29px;border-bottom: 1px solid #fff;text-indent: 20px;background: #f1f1f1;
+}

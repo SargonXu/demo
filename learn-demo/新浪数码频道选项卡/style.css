@@ -1,0 +1,88 @@
+*{
+	margin: 0;padding: 0;
+}
+a{
+	text-decoration: none;
+}
+#wrap{
+	width: 700px;height: 260px;margin: 20px auto 0;
+}
+#top{
+	width: 698px;height: 41px;border: 1px solid #73bdef;background: url(images/bg1.jpg) no-repeat 0 0;
+	position: relative;
+}
+#top a{
+	display: block;height: 30px;position: absolute;bottom: -1px;text-align: center;
+}
+#link1{
+	/* background: url(images/bg2.jpg) no-repeat left bottom; */left: 152px;width: 111px;
+}
+#link2{
+	/* background: url(images/bg2.jpg) no-repeat -111px top; */width: 112px;left: 242px
+}
+/* a.show #link1 {
+	background: url(images/bg2.jpg) no-repeat left bottom;
+}
+a.show #link2 {
+	background: url(images/bg2.jpg) no-repeat left bottom;
+} */
+span{
+	width: 46px;height: 30px;display: block;margin-left: 16px;
+}
+#box{
+	width: 698px;height: 240px;border: 1px solid #a5def7;border-top: none;position: relative;
+}
+#box>img{
+	width: 180px;height: 150px;border: 5px solid #a5def7;margin:0 10px;position: absolute;left: 0px;
+	top: 10px;
+}
+#box>h2{
+	line-height: 30px;width: 190px;position: absolute;left: 10px;top: 172px;text-align: center;
+	font-size: 18px;
+}
+#content{
+	width: 489px;height: 230px;margin-top:10px;float: right;position: relative;
+}
+#content div:first-child{
+	width: 489px;height: 160px;margin-top:10px;/* float: right; */position: relative;overflow: hidden;
+}
+ul{
+	list-style: none;width: 1467px;height: 160px;position: absolute;left: 0;top: 0;
+}
+ul li{
+	width: 163px;height: 160px;float: left;text-align: center;
+}
+ul li img{
+	width: 141px;height: 88px;border: 1px solid #aaa;
+}
+ul li h2{
+	width: 163px;height: 30px;line-height: 30px;font-size: 18px;overflow: hidden;
+}
+ul li p{
+	width: 163px;height: 40px;line-height: 20px;
+}
+#control{
+	text-align: center;height: 20px;position: absolute;left: 0;bottom: 10px;width: 100%;
+}
+#circles{
+	height: 17px;overflow: hidden;display: inline-block;
+}
+#control a,#circles div{
+	display: inline-block;height: 17px;line-height: 17px;
+}
+
+#control a{
+	width: 17px;background: url(images/bg3.jpg) no-repeat -17px 0;
+}
+#control a:first-child{
+	background: url(images/bg3.jpg) no-repeat 0 0;
+}
+#control span{
+	width: 13px;height: 13px;border: 1px solid #84848c;border-radius: 20px;background: #adb5b5;
+	margin: 2px 2px;float: left;
+}
+#control .active{
+	background: #d6eff7;border: 1px solid #5a94ad;border-radius: 20px;
+}
+
+

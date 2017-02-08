@@ -1,0 +1,23 @@
+ul,h2{
+	margin: 0;padding: 0;
+}
+#content{
+	width: 240px;height: 400px;overflow:auto;border: 1px solid #000;font: 14px "楷体";
+}
+li{
+    width: 240px;list-style: none;text-indent: 18px;line-height: 24px;
+}
+h2{
+	font-size: 18px;color: #9E2ACE;text-indent: 10px;line-height: 30px;
+	background: url(images/ico1.gif) no-repeat 0 10px #81D4D4 ;
+}
+.active{
+	font-size: 18px;color: #9E2ACE;text-indent: 10px;line-height: 30px;
+	background: url(images/ico1.gif) no-repeat 0 10px #66CA1A;
+}
+.activeli{
+	background: #C4E5EA;
+}
+#content ul{
+	display: none;
+}

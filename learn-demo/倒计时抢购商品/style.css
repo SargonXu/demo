@@ -1,0 +1,70 @@
+*{
+	margin: 0;padding: 0;
+}
+#wrap{
+	width: 760px;margin: 20px auto 0;padding: 10px;
+}
+h2{
+	border-bottom: 2px solid #aaa;padding-bottom: 10px;font-size: 18px;color: #a1afa1;
+}
+#list{
+	list-style: none;width: 760px;height: 320px;position: relative;background: url(images/bg.jpg) repeat-x;
+}
+
+#list li{
+	width: 180px;height: 300px;padding: 10px 0 10px 10px;position: absolute;top: 0;background: #fff;
+}
+.dline,.btn{
+	border: none;height: 24px;display:inline-block;color: #8C090F;
+}
+.dline{
+	background: #ccc;width: 130px;
+}
+.btn{
+	background: #fff;width: 40px;font-family:"黑体";font-size: 16px;font-weight: bold;border: none;
+}
+#list li p{
+	margin: 10px 5px;color: #888;font-size: 15px;
+}
+.time{
+	height: 20px;overflow: hidden;font-size: 14px;line-height: 20px;font-weight: bold;
+}
+#list li img{
+	width: 140px;height: 150px;margin-left: 15px;
+}
+#list li .time,strong{
+	color: #ccc;
+}
+#list span,b{
+	color: #FF1212;font-weight: bold;
+}
+#shoppinglist{
+	width: 760px;margin: 0 auto;list-style: none;
+}
+#title,#shoppinglist li{
+	width: 762px;background: #ccc;
+}
+#shoppinglist li img{
+	display:block;float: right;margin: 15px 60px 15px 0px;width: 70px;height: 70px;
+}
+#shoppinglist li span{
+	height: 100px;line-height: 100px;
+}
+#title span,#shoppinglist li span{
+	display:inline-block;width:254px;text-align: center;overflow: hidden;
+}
+#title{
+	height: 30px;margin-top: 10px;
+}
+#title span{
+	line-height: 30px;color: #8c090f;font-weight: bold;
+}
+#shoppinglist li{
+	margin-top: 5px;height: 100px;
+}
+#wrap>p{
+	font-size: 18px;font-weight: bold;margin: 10px 20px;line-height: 30px;
+}
+#wrap>p span{
+	color: #FF1212;
+}

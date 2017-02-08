@@ -1,0 +1,38 @@
+ul,a,li,span,h2,p{
+	margin: 0;padding: 0;
+}
+ul{
+	margin: 10px auto 0;border: 1px solid #f1f1f1;width: 600px;
+}
+h2{
+	width: 590px;height: 40px;background: #0af;font-size: 20px;font-weight: bold;line-height: 40px;
+	color: #fff;padding-left: 10px;
+}
+li{
+	list-style: none;width: 590px;height: 40px; line-height: 40px;padding-left: 10px;position: relative;
+}
+li+li{
+	border-top: 1px solid #aaa;
+}
+div{
+	width: 590px;height: 30px;line-height: 30px;padding: 5px 0;
+}
+p{
+	float: left;
+}
+span{
+	display: inline-block;width: 30px;height: 30px;margin-left: 10px;float: left;background: url("1.jpg") no-repeat 0 0;
+}
+a{
+	display: inline-block;text-decoration: none;color: #0af;width: 50px;height: 30px;line-height: 30px;
+	text-align: center;
+}
+input{
+	display: inline-block; width: 200px;height: 30px;line-height: 30px;font-size: 14px;
+}
+.li1{
+	position: absolute;top: 0;left: 10px;
+}
+.li2{ 
+ 	position: absolute;top: -800px;left: 10px;
+ } 

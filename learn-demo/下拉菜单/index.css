@@ -1,0 +1,109 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	list-style-type:none;
+}
+
+li{
+	float:left;
+}
+
+a{
+	text-decoration:none;
+	color:#333;
+}
+
+#top{
+	width:100%;
+	height:40px;
+	display:none;
+}
+
+#nav{
+	width:650px;
+	height:40px;
+	background-color:#14191e;
+}
+
+#nav>li{
+	width:20%;
+	height:40px;
+	position:relative;
+}
+
+#nav li a{
+	font-size:16px;
+	display:block;
+	line-height:40px;
+	text-align:center;
+	width:100%;
+	color:#df3;
+	width:100%;
+}
+
+#nav li #logo{
+	font-size:20px;
+	background-color:#4f4f4f;
+	color:#ddd;
+}
+
+#nav li ul{
+	display:none;
+	float:none;
+}
+
+#nav li ul li{
+	width:100%;
+}
+
+#nav li a:hover{
+	background-color:#bbb;
+	color:#af2;
+}
+
+#nav li:hover ul{
+	display:block;
+	position:absolute;
+	left:0px;
+	top:40px;
+	background-color:#ccc;
+	
+}
+
+#nav li ul li:first-child>a:before{
+	content:" ";
+    border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	border-bottom:10px solid #ccc;
+	position:absolute;
+	left:40%;
+	top:-10px;
+}
+
+#nav li ul li:first-child>a:hover:before{
+	border-bottom-color:#bbb;
+}
+
+#nav li:hover #logo{
+	color:#fff;
+}
+
+@media only screen and (min-width:600px) and (max-width:800px){
+	#nav #centerli{
+		display:none;
+	}
+	#top{
+		display:block;
+		width:600px;
+	}
+	#toplogo{
+		display:block;
+		line-height:40px;
+		text-align:center;
+		font-size:25px;
+		color:#40f;
+	}
+}

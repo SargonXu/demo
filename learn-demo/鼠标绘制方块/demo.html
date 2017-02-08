@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset='utf-8'"/>
+    <title>鼠标绘制方块</title>
+    <style>
+        body{
+            margin: 0;padding: 0;
+        }
+        #box{
+            width: 400px;height: 400px;border: 1px solid #000;margin: 100px auto 0;
+        }
+        #box div{
+            position: absolute;border: 1px solid #ff0;
+        }
+
+    </style> 
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById("box");
+            oBox.onmousedown=function(ev){
+                var oDiv=document.createElement("div");
+                oBox.appendChild(oDiv);
+                var ev=ev||event;
+                var L=ev.clientX;
+                var T=ev.clientY;
+                oDiv.style.left=L+"px";
+                oDiv.style.top=T+"px";
+
+    			document.onmousemove=function(ev){
+    				var ev=ev||event;
+                    var iW=0;
+                    var iH=0;
+                    var iX=ev.clientX;
+                    var iY=ev.clientY;
+                    var iMinL=oBox.offsetLeft;
+                    var iMinT=oBox.offsetTop;
+                    var iMaxL=oBox.offsetLeft+oBox.offsetWidth;
+                    var iMaxT=oBox.offsetTop+oBox.offsetHeight;
+                    if(iX<L&&iY<T){
+                        oDiv.style.left=iX+"px";
+                        oDiv.style.top=iY+"px";
+                        iW=L-iX;
+                        iH=T-iY;
+                        if(iX<=iMinL&&iY<=iMinT){
+                            iW=L-iMinL;
+                            iH=T-iMinT;
+                            oDiv.style.left=iMinL+1+"px";
+                            oDiv.style.top=iMinT+1+"px";
+                        }
+                        if(iX<iMinL&&iY>iMinT){
+                            iW=L-iMinL;
+                            oDiv.style.left=iMinL+1+"px";
+                        }
+                        if(iX>iMinL&&iY<iMinT){
+                            iH=T-iMinT;
+                            oDiv.style.top=iMinT+1+"px";
+                        }
+                    }
+                    if(iX<L&&iY>=T){
+                        oDiv.style.left=iX+"px";
+                        oDiv.style.top=T+"px";
+                        iW=L-iX;
+                        iH=iY-T;
+                        if(iX<=iMinL&&iY>=iMaxT){
+                            iW=L-iMinL;
+                            iH=iMaxT-T;
+                            oDiv.style.left=iMinL+1+"px";
+                        }
+                        if(iX<iMinL&&iY<iMaxT){
+                            iW=L-iMinL;
+                            oDiv.style.left=iMinL+1+"px";
+                        }
+                        if(iX>iMinL&&iY>iMaxT){
+                            iH=iMaxT-T;
+                        }
+                    }
+                    if(iX>=L&&iY<T){
+                        oDiv.style.left=L+"px";
+                        oDiv.style.top=iY+"px";
+                        iW=iX-L;
+                        iH=T-iY;
+                        if(iX>=iMaxL&&iY<=iMinT){
+                            iW=iMaxL-L;
+                            iH=T-iMinT;
+                            oDiv.style.top=iMinT+1+"px";
+                        }
+                        if(iX<iMaxL&&iY<iMinT){
+                            iH=T-iMinT;
+                            oDiv.style.top=iMinT+1+"px";
+                        }
+                        if(iX>iMaxL&&iY>iMinT){
+                            iW=iMaxL-L;
+                        }
+                    }
+                    if(iX>=L&&iY>=T){
+                        oDiv.style.left=L+"px";
+                        oDiv.style.top=T+"px";
+                        iW=iX-L;
+                        iH=iY-T;
+                        if(iX>iMaxL&&iY>iMaxT){
+                            iW=iMaxL-L;
+                            iH=iMaxT-T;
+                        }
+                        if(iX>iMaxL&&iY<iMaxT){
+                            iW=iMaxL-L;
+                        }
+                        if(iX<iMaxL&&iY>iMaxT){
+                            iH=iMaxT-T;
+                        }
+                    }
+                    oDiv.style.width=iW-3+"px";
+                    oDiv.style.height=iH-3+"px";
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=document.onmouseup=null;
+                };
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

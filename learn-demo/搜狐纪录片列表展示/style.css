@@ -1,0 +1,57 @@
+*{
+	margin: 0;padding: 0;
+}
+#wrap{
+	margin: 10px auto 0px;width: 250px;background: #dee7e7;padding: 10px 10px 30px 10px;
+	position: relative;font-size: 14px;
+
+}
+h2{
+	color: #425a6b;font-size: 18px;font-family: "微软雅黑";padding:0px 0px 10px 10px;
+	border-bottom:1px solid #94bdd6 ;width: 134px;
+}
+li{
+	list-style: none;
+}
+#changeList{
+    position: absolute;top: 24px;right: 10px;
+}
+#changeList li{
+	float: left;font-size: 14px;font-weight: bold;border: 1px solid #94bdd6;padding: 2px;
+	border-left:none;cursor: pointer;
+}
+
+#changeList #firstLi{
+	border-left: 1px solid #94bdd6;background: #fff;border-bottom: 1px solid #fff;
+}
+#list{
+	position: relative;
+}
+ #list li{
+	width: 250px;border-bottom: 1px dashed #fff;cursor: pointer;
+}
+#list li p{
+	padding-left: 30px;line-height: 30px;background: url(images/bg1.jpg) no-repeat ;background-position: 5px -2px;
+}
+a{
+	text-decoration: none;color: #000;position: absolute;bottom: 10px;right: 10px;
+}
+
+#list div{
+	width: 250px;height: 100px;background: url(images/bg2.jpg) no-repeat  #fff;background-position: 5px 6px;
+	position: relative;cursor: pointer;display: none;
+}
+#list a{
+	position: absolute;top: 20px;left: 40px;
+}
+#list img{
+	width: 80px;height: 60px;border: none;
+}
+#list span{
+	display: block;width: 110px;height:60px;overflow:hidden;position: absolute;top: 20px;
+	right: 10px;color: #425a9b;font-weight: bold;
+}
+#list input{
+	width: 40px;line-height: 25px;background: #009;color: #fff;position: absolute;
+	bottom: 10px;right: 10px;border: 1px solid #009;border-radius: 4px;
+}

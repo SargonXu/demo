@@ -1,0 +1,8 @@
+ul{
+	position: relative;width: 500px;height: 500px;background: url(images/pic.jpg) no-repeat 0 0;padding: 0;
+	margin: 0;list-style: none;
+}
+li{
+	position: absolute;left: 0px;top: 0px;border-right: 1px solid #f1f1f1;border-bottom: 1px solid #f1f1f1;border-top:none;border-left: none;
+	width:49px;height:49px;background:#f1f1f1;
+}

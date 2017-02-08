@@ -1,0 +1,22 @@
+*{
+	margin: 0;padding: 0;border: none;
+}
+#wrap{
+	width: 802px;height: 408px;position: relative;border: 10px solid #f1f1f1;background: #f1f1f1;
+	margin: 10px auto 0;
+}
+.choice{
+	list-style: none;border: 1px solid #dfdfdf;border-right: none;height: 40px;width: 130px;
+	padding: 60px 0px 0px 70px;
+}
+img{
+	display: block;border:1px solid #dfdfdf; border-left:none;width: 600px;height: 406px;
+	position: absolute;top: 0;right: 0;
+}
+div{
+	width: 600px;height: 30px;position: absolute;right: 1px;bottom:4px;
+}
+div span{
+	display:block;color:#fff; background: #666;opacity: 0.7;height: 30px;float: left;
+	text-align:center;line-height:30px;margin-right: 2px;cursor: pointer;
+}

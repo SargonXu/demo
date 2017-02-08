@@ -1,0 +1,28 @@
+*{
+	padding: 0;margin: 0;
+}
+body{
+	text-align: center;background: #f1f1f1;
+}
+h2,p,input{
+	margin: 10px 0;
+}
+input{
+	line-height: 24px;padding: 5px 10px;
+}
+ul{
+	list-style: none;width: 120px;height: 80px;background: #d5ff2d;border: 1px solid #000;position: absolute;
+	top: -1px;left: -121px;
+}
+ul li{
+	line-height: 30px;margin: 5px 0 10px;
+}
+#wrap div{
+	overflow: hidden;width: 700px;height: 400px;position: relative;
+}
+#wrap{
+	position: relative;top:0px;margin: 15px auto 0;width: 700px;height: 400px;border: 1px solid #000;background: #fff;
+}
+#wrap div img{
+	position: absolute;top: 0px;width: 20px;height: 20px;
+}

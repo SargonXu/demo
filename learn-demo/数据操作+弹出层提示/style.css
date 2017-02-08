@@ -1,0 +1,41 @@
+body,ul{
+	margin: 0;padding: 0;
+}
+li{
+	list-style: none;
+}
+#wrap{
+	margin: 50px 100px 0;
+}
+#top{
+	border-bottom: 2px solid #ff0505;height: 40px;
+}
+#top li{
+	padding: 5px 20px;float: left;height: 30px;line-height: 30px;cursor: pointer;
+}
+#top li.active{
+	background: #ff0505;color: #fff;font-weight: bold;
+}
+#listbox{
+	margin-top: 10px;
+}
+#listbox ul{
+}
+#listbox li{
+	position: relative;
+}
+#listbox li a{
+	text-align: center;display: inline-block;line-height: 30px;padding: 5px 0;
+}
+#box{
+	position: absolute;width: 400px;border: 2px solid #f18a42;height: 200px;padding: 10px;background: #fff;top: -400px;
+}
+#box span{
+    position: absolute;left: -11px;top:30px;width: 11px; height: 17px; background: url("arrow.png") no-repeat;
+}
+#box ul{
+	width: 400px;line-height: 30px;
+}
+#box li{
+	line-height: 30px;width: 200px;float: left;border-bottom: 1px solid #ccc;height: 30px;
+}
